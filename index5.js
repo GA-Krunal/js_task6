@@ -1,4 +1,4 @@
-var bill = prompt("enter bill amount");
+let bill = prompt("enter bill amount");
 bill = Number(bill);
 
 let tip;
