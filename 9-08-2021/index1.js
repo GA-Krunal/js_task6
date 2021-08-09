@@ -1,8 +1,8 @@
 //  ******  exercise 1  *******
-/*
-let x = 3;
-let y = -7;
-let z = 2;
+
+const x = 3;
+const y = -7;
+const z = 2;
 
 prod = x * y * 2 ;
 if(prod<0){
@@ -15,12 +15,13 @@ else if(prod>0){
 else{
     alert("value is 0");
 }
-*/
+
+
 
 
 //  ******  exercise 2  *******
 /*
-let a = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+const a = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 
 for (let i = 0; i < a.length; i++) {
     const element = a[i];
@@ -35,21 +36,22 @@ for (let i = 0; i < a.length; i++) {
 }
 */
 
+
 //  ******  exercise 3  *******
 /*
-let chicken = 3;
-let cow = 2;
-let dog = 4;
+const chicken = 3;
+const cow = 2;
+const dog = 4;
 
-let total = chicken + cow + dog;
+const total = chicken + cow + dog;
 
-function animals(lchicken ,lcow , ldog) {
+function animals(chickenLeg ,cowLeg , dogLeg) {
 
-    let total_leg_chicken = chicken * lchicken ; 
-    let total_leg_cow = cow * lcow ; 
-    let total_leg_dog = dog * ldog ; 
+    let totalLegChicken = chicken * chickenLeg ; 
+    let totalLegCow = cow * cowLeg ; 
+    let totalLegDog = dog * dogLeg ; 
 
-    alert(`legs of chicken:${total_leg_chicken} legs of cow: ${total_leg_cow} legs of dog:${total_leg_dog}`);
+    alert(`legs of chicken:${totalLegChicken} legs of cow: ${totalLegCow} legs of dog:${totalLegDog}`);
 
 }
 
@@ -57,12 +59,13 @@ if (total>10) {
     animals(2,4,4); 
 }
 else{
-    animals(4,6,1)
+    animals(4,6,1);
 }
 */
 
-//  ******  exercise 4  *******
 
+//  ******  exercise 4  *******
+/*
 let x = Number(prompt("enter the first number:"));
 let y = Number(prompt("enter the second number:"));
 
@@ -79,7 +82,7 @@ let g = --y;
 document.getElementById("kb").innerHTML =(`addition : ${a} <br> substration : ${b} <br> multiplication: ${c}
 <br> division: ${d} <br> remainder : ${e} <br> increament of x : ${f} <br> decreament of y : ${g} <br> exponential: ${h}`);
 
-
+*/
 
 
 
