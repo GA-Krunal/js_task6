@@ -4,7 +4,7 @@ const x = 3;
 const y = -7;
 const z = 2;
 
-prod = x * y * 2 ;
+const prod = x * y * 2 ;
 if(prod<0){
     
     alert("The sign is -");
@@ -22,7 +22,7 @@ else{
 const a = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 
 for (let i = 0; i < a.length; i++) {
-    const element = a[i];
+    
     if (a[i]%2==0) {
         alert(`${a[i]} is even` );
         
@@ -46,17 +46,17 @@ const dog =Number(prompt("enter the number of dog:"));;
 const total = chicken + cow + dog;
 
 if (total>10) {
-    animals(2,4,4); 
+    calculateLegs(2,4,4); 
 }
 else if(total<=10){
-    animals(4,6,1);
+    calculateLegs(4,6,1);
 }
 else{
     alert("only numbers allowed");
     run();
 }
 
-function animals(chickenLeg ,cowLeg , dogLeg) {
+function calculateLegs(chickenLeg ,cowLeg , dogLeg) {
 
     let totalLegChicken = chicken * chickenLeg ; 
     let totalLegCow = cow * cowLeg ; 
@@ -72,8 +72,8 @@ run();
 
 //  ******  exercise 4  *******
 
-let x = Number(prompt("enter the first number:"));
-let y = Number(prompt("enter the second number:"))
+const x = Number(prompt("enter the first number:"));
+const y = Number(prompt("enter the second number:"))
 
 let a = x + y; 
 let b = x - y ;
