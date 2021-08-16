@@ -44,19 +44,19 @@ console.log(showFirstAndLast(arr3));
 
 
 // ***********task 4 **************
-/* 
-let arr4 = [1,2,3,4,5];
+
+let arr4 = [1,2,3,4,5,22,44];
 
 function showMultipleByTwo(arr) {
 
-    let doubled = arr.reduce(function(newArr , val) {
-        newArr.push(val*2);
-        return newArr;
+    let newArr = arr.reduce((accumulator , val) => {
+        accumulator.push(val*2);
+        return accumulator;
     },[]);
-    return doubled;
+    return newArr;
 }
 console.log(showMultipleByTwo(arr4));
-*/
+
 
 // ***********task 5 **************
 
