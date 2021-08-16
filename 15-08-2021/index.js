@@ -22,7 +22,6 @@ function onlyEvenValues(arr) {
     const newArr = arr.filter(element =>{
         return element%2 === 0;
     });
-    
     return newArr;
 }
 console.log(onlyEvenValues(arr2));
@@ -44,7 +43,7 @@ console.log(showFirstAndLast(arr3));
 
 
 // ***********task 4 **************
-
+/*
 let arr4 = [1,2,3,4,5,22,44];
 
 function showMultipleByTwo(arr) {
@@ -57,6 +56,7 @@ function showMultipleByTwo(arr) {
 }
 console.log(showMultipleByTwo(arr4));
 
+*/
 
 // ***********task 5 **************
 
@@ -86,7 +86,6 @@ switch (num) {
     case 7:
         document.getElementById("kb").innerText = "Sunday";
         break;
-
     default:
         console.log("invalid input ! try again")
         run();
