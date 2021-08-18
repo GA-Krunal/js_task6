@@ -55,7 +55,7 @@ fetch("index.json")
             function myFunc3(colorchemeArray ,colorschemeName ) {
                 for (let i = 0; i < colorchemeArray.length; i++) {
                     const element = colorchemeArray[i];
-                    // console.log(element);
+                
                     if (element["name"]=== colorschemeName) {
                         return element;
                     }
@@ -81,9 +81,9 @@ fetch("index.json")
                     let stepNumber = "s" + stepNo;
                     for (let i = 0; i < colorchemeArray.length; i++) {
                         const element = colorchemeArray[i];
-                    // console.log(element);
+                    
                         if (element["name"]=== colorschemeName) {
-                        // return element;
+                        
                             if (element["json"][stepNumber][elementName]["style"]["color"]) {
 
                                 return element["json"][stepNumber][elementName]["style"]["color"];
@@ -117,8 +117,7 @@ fetch("index.json")
             function myFunc5(stepArray ,elementName ) {
                 for (let i = 0; i < stepArray.length; i++) {
                     const val = stepArray[i];
-                    // console.log(element);
-                    // console.log(element["elements"]);
+
                     for (const key in val["elements"]) {
                         if (Object.hasOwnProperty.call(val["elements"], key)) {
 
@@ -129,12 +128,9 @@ fetch("index.json")
                                 return "elementName does not exist!";
                             }
                         }
-                    }
-                    
-                }
-                  
+                    }     
+                }      
             }
-
             console.log(myFunc5(data["steps"],"button-3"));
         })
 */
