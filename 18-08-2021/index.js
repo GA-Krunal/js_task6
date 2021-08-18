@@ -64,7 +64,6 @@ fetch("index.json")
                     }
                 }
             }
-
             console.log(myFunc3(data["colorschemes"],'Green'));
         })
 */
@@ -81,7 +80,6 @@ fetch("index.json")
                     let stepNumber = "s" + stepNo;
                     for (let i = 0; i < colorchemeArray.length; i++) {
                         const element = colorchemeArray[i];
-                    
                         if (element["name"]=== colorschemeName) {
                         
                             if (element["json"][stepNumber][elementName]["style"]["color"]) {
@@ -89,20 +87,16 @@ fetch("index.json")
                                 return element["json"][stepNumber][elementName]["style"]["color"];
                             }
                             else{
-
                                 return element["json"][stepNumber][elementName]["style"]["background-color"];
                             }
-                        
                         }
                         else{
                             return "color name does not exist";
                         }
                     }
                 } catch (err) {
-
                     return "invalid parameters passed!";
-                }
-                
+                } 
             }
             console.log(myFunc4(data["colorschemes"],'Black', 3, 'text-12'));
         })
