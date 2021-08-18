@@ -98,7 +98,7 @@ fetch("index.json")
                     return "invalid parameters passed!";
                 } 
             }
-            console.log(myFunc4(data["colorschemes"],'Black', 3, 'text-12'));
+            console.log(myFunc4(data["colorschemes"],'Green', 1, 'text-2'));
         })
 */
 
@@ -111,20 +111,17 @@ fetch("index.json")
             function myFunc5(stepArray ,elementName ) {
                 for (let i = 0; i < stepArray.length; i++) {
                     const val = stepArray[i];
-
+                    
                     for (const key in val["elements"]) {
                         if (Object.hasOwnProperty.call(val["elements"], key)) {
-
                             if (val["elements"][key] === elementName) {
                                 return val["stepnum"];
-                            }
-                            else{
-                                return "elementName does not exist!";
                             }
                         }
                     }     
                 }      
             }
-            console.log(myFunc5(data["steps"],"button-3"));
+            console.log(myFunc5(data["steps"],'button-2'));
         })
 */
+
