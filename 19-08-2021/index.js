@@ -4,7 +4,7 @@ fetch("index.json")
         .then(response => response.json())
         .then(data =>{
 
-            function myFunc3(colorchemeArray) {
+            function myFunc1(colorchemeArray) {
 
                 for (let i = 0; i < colorchemeArray.length; i++) {
                     const element = colorchemeArray[i];
@@ -13,23 +13,22 @@ fetch("index.json")
                         if (Object.hasOwnProperty.call(element, key)) {
                             if (key === "activate") {
                                 return element["json"];
-                            }
-                            
+                            }   
                         }
                     }  
                 }
             }
-            console.log(myFunc3(data["colorschemes"]));
+            console.log(myFunc1(data["colorschemes"]));
         })
 */
-// ********************Task3*****************
+// ********************Task2*****************
 /*
 
 fetch("index.json")
         .then(response => response.json())
         .then(data =>{
 
-            function myFunc3(colorchemeArray) {
+            function myFunc2(colorchemeArray) {
                 let arr = [];
 
                 for (let i = 0; i < colorchemeArray.length; i++) {
@@ -42,13 +41,12 @@ fetch("index.json")
                                     arr.push(a);
                                 }
                                 return arr;
-                            }
-                            
+                            }   
                         }
                     }  
                 }
             }
-            console.log(myFunc3(data["colorschemes"]));
+            console.log(myFunc2(data["colorschemes"]));
         })
 */
 
@@ -79,8 +77,7 @@ fetch("index.json")
                     }  
                 }
                 return arr;
-            }
-            
+            } 
             console.log(myFunc3(data["colorschemes"]));
         })
 */
