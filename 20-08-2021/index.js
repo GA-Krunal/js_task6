@@ -5,9 +5,8 @@ fetch("index.json")
         .then(data =>{
             let count = 0;
             function myFunc1(stepJson ,elementType ) {
-            //    console.log(data[stepJson]);
+    
                for(key in data[stepJson]){
-                //    console.log(key);
                    if (key.includes(elementType)) {
                        count++;
                    }
@@ -17,6 +16,7 @@ fetch("index.json")
             console.log(myFunc1("s2","form"));
         })
 */
+
 // ****************task2*****************
 /*
 fetch("index.json")
@@ -36,7 +36,7 @@ fetch("index.json")
             }  
             console.log(myFunc2(2,"image"));
         })
-*/
+
 
 // ****************task3*****************
 /*
