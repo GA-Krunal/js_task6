@@ -23,7 +23,7 @@ fetch("index.json")
         .then(response => response.json())
         .then(data =>{
 
-            function myFunc1(stepNo ,elementType ) {
+            function myFunc2(stepNo ,elementType ) {
                     let arr = [];
                     let stepNumber = "s" + stepNo;
                     for(key in data[stepNumber]){
@@ -34,7 +34,7 @@ fetch("index.json")
                        const elem = arr[arr.length - 1];
                        return data[stepNumber][elem];       
             }  
-            console.log(myFunc1(2,"image"));
+            console.log(myFunc2(2,"image"));
         })
 */
 
@@ -45,7 +45,7 @@ fetch("index.json")
         .then(response => response.json())
         .then(data =>{
 
-            function myFunc1(stepNo ,tagValue ) {
+            function myFunc3(stepNo ,tagValue ) {
                     let arr = [];
                     let stepNumber = "s" + stepNo;
 
@@ -65,7 +65,7 @@ fetch("index.json")
                    }
                    return arr;
             }  
-            console.log(myFunc1(1,"span"));
+            console.log(myFunc3(1,"span"));
         })
 
 
