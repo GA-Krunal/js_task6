@@ -31,16 +31,15 @@ fetch("index.json")
                             arr.push(key);
                         }
                        }
-                       const elem = arr[arr.length - 1];
-                       return data[stepNumber][elem];       
+                    const elem = arr[arr.length - 1];
+                    return data[stepNumber][elem];       
             }  
             console.log(myFunc2(2,"image"));
         })
 */
 
 // ****************task3*****************
-
-
+/*
 fetch("index.json")
         .then(response => response.json())
         .then(data =>{
@@ -52,7 +51,7 @@ fetch("index.json")
                    for (const key in data[stepNumber]) {
                        if (Object.hasOwnProperty.call(data[stepNumber], key)) {
                            const element = data[stepNumber][key];
-                           
+                            
                            for (const keyy in element) {
                                if (Object.hasOwnProperty.call(element, keyy)) {
                                    const val = element[keyy];
@@ -67,5 +66,4 @@ fetch("index.json")
             }  
             console.log(myFunc3(1,"span"));
         })
-
-
+*/
