@@ -1,5 +1,5 @@
 // ********************Task1*****************
-/*
+
 fetch("index.json")
         .then(response => response.json())
         .then(data =>{
@@ -7,10 +7,10 @@ fetch("index.json")
             function myFunc1(colorchemeArray) {
 
                 for (let i = 0; i < colorchemeArray.length; i++) {
-const element = colorchemeArray[i];
-                         
+                    const element = colorchemeArray[i];
+     
                     for (const key in element) {
-                       if (element[key] === true) {
+                       if (key === "activate" && element[key] === true) {
                             return element["json"];
                         }        
                     }  
@@ -18,7 +18,7 @@ const element = colorchemeArray[i];
             }
             console.log(myFunc1(data["colorschemes"]));
         })
-*/
+
 
 // ********************Task2*****************
 
