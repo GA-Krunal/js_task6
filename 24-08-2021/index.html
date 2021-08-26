@@ -6,22 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
   <title>Hello, world!</title>
 </head>
+
 <body>
-  <input type="text" id="myInput" placeholder="Search by Name" onkeyup="searchFun()"
-    style="border:2px solid rgb(12, 12, 12)" />
-  <div class="radioButton mt-2">
-    <input class="form-check-input" type="radio" name="grp1" value="Yes" id="rd1">Yes
-    <input class="form-check-input" type="radio" name="grp1" id="rd2" value="No">No
-    <input class="form-check-input" type="radio" name="grp1" id="rd3" value="All" checked>All
+  <div class="container" style="text-align: center;">
+    <b> NAME:</b><input type="text" id="myInput" placeholder="Search by Name" onkeyup="searchFun()" />
+    <div class="radioButton mt-2">
+      <b> ACTIVATE:</b>
+      <input class="form-check-input" type="radio" name="grp1" value="Yes" id="rd1">Yes
+      <input class="form-check-input" type="radio" name="grp1" id="rd2" value="No">No
+      <input class="form-check-input" type="radio" name="grp1" id="rd3" value="All" checked>All
+    </div>
   </div>
-  <table class="table mt-2" id="myTable" style="background-color: rgb(202, 213, 230);">
+  <table class="table mt-2 js-sort-table " id="myTable">
     <thead>
       <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Name</th>
-        <th scope="col">Activate</th>
+        <th scope="col">
+          <button onclick="sortAsc(0)">Asc</button>
+          ID
+          <button onclick="sortDsc(0)">Dsc</button>
+        </th>
+        <th scope="col">
+          <button onclick="sortAsc(1)">Asc</button>
+          Name
+          <button onclick="sortDsc(1)">Dsc</button>
+        </th>
+        <th scope="col">
+          <button onclick="sortAsc(2)">Asc</button>
+          Activate
+          <button onclick="sortDsc(2)">Dsc</button>
+        </th>
+        <th scope="col">JSON</th>
       </tr>
     </thead>
     <tbody id="tbody">
@@ -30,6 +47,7 @@
   <script src="index.js"></script>
   <script>
     const searchFun = () => {
+
       let filter = document.getElementById("myInput").value.toUpperCase();
       let myTable = document.getElementById("myTable");
       let tr = myTable.getElementsByTagName("tr");
@@ -38,13 +56,62 @@
         let td = tr[i].getElementsByTagName("td")[1];
         if (td) {
 
-          let textValue = td.textContent || td.innerHTML;
+          let textValue = td.textContent;
           if (textValue.toUpperCase().indexOf(filter) > -1) {
             tr[i].style.display = "";
           }
           else {
             tr[i].style.display = "none";
           }
+        }
+      }
+    }
+
+    function sortAsc(n) {
+      var table, rows, switching, i, x, y, shouldSwitch;
+      table = document.getElementById("myTable");
+      switching = true;
+
+      while (switching) {
+
+        switching = false;
+        rows = table.rows;
+        for (i = 1; i < (rows.length - 1); i++) {
+
+          shouldSwitch = false;
+          x = rows[i].getElementsByTagName("TD")[n];
+          y = rows[i + 1].getElementsByTagName("TD")[n];
+          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+            shouldSwitch = true;
+            break;
+          }
+        }
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+        }
+      }
+    }
+    function sortDsc(m) {
+      var table, rows, switching, i, x, y, shouldSwitch;
+      table = document.getElementById("myTable");
+      switching = true;
+
+      while (switching) {
+        switching = false;
+        rows = table.rows;
+        for (i = 1; i < (rows.length - 1); i++) {
+          shouldSwitch = false;
+          x = rows[i].getElementsByTagName("TD")[m];
+          y = rows[i + 1].getElementsByTagName("TD")[m];
+          if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+            shouldSwitch = true;
+            break;
+          }
+        }
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
         }
       }
     }

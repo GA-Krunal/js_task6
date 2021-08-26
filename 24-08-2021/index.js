@@ -3,40 +3,50 @@ fetch("index.json")
     .then(data => {
 
         function myFunc1(colorchemeArray) {
-
+            const tBody = document.querySelector('tbody');
             for (let i = 0; i < colorchemeArray.length; i++) {
 
                 const element = colorchemeArray[i];
-                const tBody = document.querySelector('tbody');
-                const tr = document.createElement("tr");
-                const td1 = document.createElement("td");
-                const td2 = document.createElement("td");
-                const td3 = document.createElement("td");
-                tBody.appendChild(tr);
-
                 for (key in element) {
-
-                    if (key === "id") {
-                        td1.innerText = element[key];
-                        tr.appendChild(td1);
-                    }
-                    else if (key === "name") {
-                        td2.innerText = element[key];
-                        tr.appendChild(td2);
-                    }
-                    else if (key === "activate") {
-                        td3.innerText = "Yes";
-                        tr.appendChild(td3);
-                    }
-                    else if (element["activate"] === undefined) {
-                        td3.innerText = "No";
-                        tr.appendChild(td3);
-                    }
-                    else {
-                        continue;
+                    if (element["activate"] === undefined) {
+                        element["activate"] = false;
                     }
                 }
+                const tr = document.createElement("tr");
+                tr.id = "tr" + (i + 1);
+                for (let j = 0; j < Object.keys(element).length; j++) {
+
+                    let td = document.createElement("td");
+                    tr.appendChild(td);
+                    switch (j) {
+                        case 0:
+                            td.innerText = element["id"];
+                            break;
+                        case 1:
+                            td.innerText = element["name"];
+                            break;
+                        case 2:
+                            if (element["activate"] === true) {
+                                td.innerText = "Yes";
+                            }
+                            else {
+                                td.innerText = "No";
+                            }
+                            break;
+                        case 3:
+                            for (key in element["json"]) {
+                                const trr = document.createElement("tr");
+                                trr.innerText = key;
+                                td.appendChild(trr);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                tBody.appendChild(tr);
             }
+            console.log(tBody);
         }
         myFunc1(data["colorschemes"]);
 
@@ -88,6 +98,3 @@ fetch("index.json")
             }
         })
     })
-
-
-
