@@ -13,10 +13,9 @@ fetch("index.json")
                     }
                 }
                 const tr = document.createElement("tr");
-                tr.id = "tr" + (i + 1);
                 for (let j = 0; j < Object.keys(element).length; j++) {
 
-                    let td = document.createElement("td");
+                    const td = document.createElement("td");
                     tr.appendChild(td);
                     switch (j) {
                         case 0:
@@ -46,15 +45,14 @@ fetch("index.json")
                 }
                 tBody.appendChild(tr);
             }
-            console.log(tBody);
         }
         myFunc1(data["colorschemes"]);
 
         document.getElementById("rd1").addEventListener("click", function () {
 
-            let filter = document.getElementById("rd1").value.toUpperCase();
-            let myTable = document.getElementById("myTable");
-            let tr = myTable.getElementsByTagName("tr");
+            const filter = document.getElementById("rd1").value.toUpperCase();
+            const myTable = document.getElementById("myTable");
+            const tr = myTable.getElementsByTagName("tr");
             for (let i = 0; i < tr.length; i++) {
                 let td = tr[i].getElementsByTagName("td")[2];
                 if (td) {
@@ -70,9 +68,9 @@ fetch("index.json")
         })
         document.getElementById("rd2").addEventListener("click", function () {
 
-            let filter = document.getElementById("rd2").value.toUpperCase();
-            let myTable = document.getElementById("myTable");
-            let tr = myTable.getElementsByTagName("tr");
+            const filter = document.getElementById("rd2").value.toUpperCase();
+            const myTable = document.getElementById("myTable");
+            const tr = myTable.getElementsByTagName("tr");
             for (let i = 0; i < tr.length; i++) {
 
                 let td = tr[i].getElementsByTagName("td")[2];
@@ -90,8 +88,8 @@ fetch("index.json")
         })
         document.getElementById("rd3").addEventListener("click", function () {
 
-            let myTable = document.getElementById("myTable");
-            let tr = myTable.getElementsByTagName("tr");
+            const myTable = document.getElementById("myTable");
+            const tr = myTable.getElementsByTagName("tr");
             for (let i = 0; i < tr.length; i++) {
 
                 tr[i].style.display = "";
