@@ -1,0 +1,16 @@
+.sidebar{
+    background:rgb(8, 8, 8);
+    float: left;
+    width: 250px;
+    text-align: center;
+    height: 100vh;
+    
+    }
+    .sidebar li{
+    display: block;
+    margin: 0;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px 15px;
+    }
