@@ -1,8 +1,5 @@
-// let a = document.getElementById("trashItems");
-// console.log(a);
-
 document.addEventListener("DOMContentLoaded", function () {
-  // console.log(prodArray);
+
   let prodArray = JSON.parse(localStorage.getItem("products"));
   for (let j = 0; j < prodArray.length; j++) {
     const item = prodArray[j];
@@ -27,21 +24,21 @@ document.addEventListener("DOMContentLoaded", function () {
       div4.setAttribute("class", "btn-group");
       div4.setAttribute("role", "group");
       div4.setAttribute("aria-label", "Basic example");
-      const btn1 = document.createElement("button");
-      btn1.setAttribute("type", "button");
-      btn1.setAttribute("class", "btn btn-primary");
-      btn1.innerText = "restore";
-      btn1.addEventListener("click", function () {
+      const resBtn = document.createElement("button");
+      resBtn.setAttribute("type", "button");
+      resBtn.setAttribute("class", "btn btn-success");
+      resBtn.innerText = "restore";
+      resBtn.addEventListener("click", function () {
         let strg = JSON.parse(localStorage.getItem("products"));
         strg[j]["flag"] = "true";
         localStorage.setItem("products", JSON.stringify(strg));
         window.location.reload();
       })
-      const btn2 = document.createElement("button");
-      btn2.setAttribute("type", "button");
-      btn2.innerText = "delete";
-      btn2.setAttribute("class", "btn btn-primary");
-      btn2.addEventListener("click", function () {
+      const delBtn = document.createElement("button");
+      delBtn.setAttribute("type", "button");
+      delBtn.innerText = "delete";
+      delBtn.setAttribute("class", "btn btn-danger");
+      delBtn.addEventListener("click", function () {
         let strg = JSON.parse(localStorage.getItem("products"));
         strg.splice( strg.indexOf(strg[j]), 1);
         localStorage.setItem("products", JSON.stringify(strg));
@@ -51,29 +48,15 @@ document.addEventListener("DOMContentLoaded", function () {
       for (key in item) {
 
         switch (key) {
-          case "name":
-
-            break;
+          
           case "title":
             h5.innerText = item[key];
-            break;
-          case "price":
-
             break;
           case "image":
             img.setAttribute("src", item[key]);
             break;
-          case "stock":
-
-            break;
           case "description":
             p.innerText = item[key];
-            break;
-          case "location":
-
-            break;
-          case "category":
-
             break;
 
           default:
@@ -81,8 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
 
-      div4.appendChild(btn1);
-      div4.appendChild(btn2);
+      div4.appendChild(resBtn);
+      div4.appendChild(delBtn);
       div3.appendChild(p);
       div3.appendChild(div4);
       div2.appendChild(h5);

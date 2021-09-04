@@ -29,10 +29,12 @@
     </div>
   </nav>
   <aside class="sidebar">
+    <li> <a href="home.html"> <button type="button" class="btn btn-primary mt-2">Home</button></a></li>
+    <li> <a href="trash.html"> <button type="button" class="btn btn-primary">Trash</button></a></li>
     <h5 class="text-white">filter by location</h5>
-    <li><input class="form-check-input" type="checkbox" value="india" id="ind">India</li>
-    <li><input class="form-check-input" type="checkbox" value="australia" id="aus">Australia</li>
-    <li><input class="form-check-input" type="checkbox" value="canada" id="can">Canada</li>
+    <li><input class="form-check-input ch" type="checkbox" value="india" id="ind">India</li>
+    <li><input class="form-check-input ch" type="checkbox" value="australia" id="aus">Australia</li>
+    <li><input class="form-check-input ch" type="checkbox" value="canada" id="can">Canada</li>
     <h5 class="text-white">filter by category</h5>
     <li><input class="form-check-input" type="checkbox" value="toys" id="toy">Toys</li>
     <li><input class="form-check-input" type="checkbox" value="mobile" id="mob">Mobile</li>
@@ -41,8 +43,7 @@
     <li><input class="form-check-input" type="radio" name="availability" id="rad1" value="in stock">In stock</li>
     <li><input class="form-check-input" type="radio" name="availability" id="rad2" value="out of stock">Out of stock
     </li>
-    <li> <a href="home.html"> <button type="button" class="btn btn-primary mt-2">Home</button></a></li>
-    <li> <a href="trash.html"> <button type="button" class="btn btn-primary">Trash</button></a></li>
+    
   </aside>
   <main>
     <div class="container">
@@ -60,27 +61,31 @@
           <div class="modal-body">
             <form action="">
 
+              <!-- <div class="mb-3">
+                product name : <input type="text" id="prodName" >
+                <div><span id="spName"></span></div>
+              </div> -->
               <div class="mb-3">
-                product name : <input type="text" id="prodName">
+                product Title : <input type="text" id="prodTitle" >
+                <div><span id="spTitle"></span></div>
               </div>
               <div class="mb-3">
-                title : <input type="text" id="prodTitle">
+                Price : <input type="number" id="prodPrice" >
               </div>
               <div class="mb-3">
-                price : <input type="number" id="prodPrice">
+                Rating: <input type="text" id="Rating" >
               </div>
               <div class="mb-3">
-                rating:
+                image url : <input type="url" id="imgUrl" >
+                <div><span id="spImg"></span></div>
               </div>
               <div class="mb-3">
-                image url : <input type="url" id="imgUrl">
-              </div>
-              <div class="mb-3">
-                <input type="radio" name="availability" id="rd1" value="in stock">in stock
+                <input type="radio" name="availability" id="rd1" value="in stock" checked>in stock
                 <input type="radio" name="availability" id="rd2" value="out of stock">out of stock
               </div>
               <div class="mb-3">
                 description: <textarea name="txarea" id="description" cols="30" rows="2"></textarea>
+                <div><span id="spDesc"></span></div>
               </div>
               <div class="mb-3">
                 <select class="form-select" aria-label="Default select example" style="width: 200px;" id="location">
@@ -98,7 +103,10 @@
                   <option value="laptop">laptop</option>
                 </select>
               </div>
-
+              <div>
+                <span id="formValid"></span>
+              </div>
+              
             </form>
           </div>
           <div class="modal-footer">
@@ -118,20 +126,22 @@
           <div class="modal-body">
             <form action="">
 
-              <div class="mb-3">
+              <!-- <div class="mb-3">
                 product name : <input type="text" id="edProdName">
-              </div>
+              </div> -->
               <div class="mb-3">
-                title : <input type="text" id="edProdTitle">
+                Title : <input type="text" id="edProdTitle">
+                <div><span id="edTitle"></span></div>
               </div>
               <div class="mb-3">
                 price : <input type="number" id="edProdPrice">
               </div>
               <div class="mb-3">
-                rating:
+                rating: <input type="text" id="edRating">
               </div>
               <div class="mb-3">
                 image url : <input type="url" id="edImgUrl">
+                <div><span id="edImg"></span></div>
               </div>
               <div class="mb-3">
                 <input type="radio" name="availability" id="edRd1" value="in stock">in stock
@@ -139,6 +149,7 @@
               </div>
               <div class="mb-3">
                 description: <textarea name="txarea" id="edDescription" cols="30" rows="2"></textarea>
+                <div><span id="edDesc"></span></div>
               </div>
               <div class="mb-3">
                 <select class="form-select" aria-label="Default select example" style="width: 200px;" id="edLocation">
@@ -156,7 +167,9 @@
                   <option value="laptop">laptop</option>
                 </select>
               </div>
-
+              <div>
+                <span id="edFormValid"></span>
+              </div>
             </form>
           </div>
           <div class="modal-footer">
@@ -169,9 +182,8 @@
 
   </main>
   <footer>
-    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#edit"> -->
-    <!-- Add Product
-    </button> -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="float: right;"> Add Product
+    </button>
   </footer>
   <!-- <script src="popup.js"></script> -->
   <script src="home.js"></script>
