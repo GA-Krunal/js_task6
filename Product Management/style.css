@@ -1,5 +1,5 @@
 .sidebar{
-    background:rgb(8, 8, 8);
+    background:rgb(165, 182, 182);
     float: left;
     width: 250px;
     text-align: center;
@@ -14,3 +14,6 @@
     font-size: 20px;
     padding: 10px 15px;
     }
+.navbar{
+    background-color: rgb(85, 113, 133);
+}

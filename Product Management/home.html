@@ -14,12 +14,12 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-light bg-light">
+  <nav class="navbar ">
     <div class="container-fluid">
       <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="#">level 1</a></li>
-          <li class="breadcrumb-item active" aria-current="page">level 2</li>
+          <li class="breadcrumb-item "><a href="home.html">level 1</a></li>
+          <li class="breadcrumb-item active text-white" aria-current="page">level 2</li>
         </ol>
       </nav>
       <form class="d-flex">
@@ -31,19 +31,16 @@
   <aside class="sidebar">
     <li> <a href="home.html"> <button type="button" class="btn btn-primary mt-2">Home</button></a></li>
     <li> <a href="trash.html"> <button type="button" class="btn btn-primary">Trash</button></a></li>
-    <h5 class="text-white">filter by location</h5>
-    <li><input class="form-check-input ch" type="checkbox" value="india" id="ind">India</li>
-    <li><input class="form-check-input ch" type="checkbox" value="australia" id="aus">Australia</li>
-    <li><input class="form-check-input ch" type="checkbox" value="canada" id="can">Canada</li>
-    <h5 class="text-white">filter by category</h5>
-    <li><input class="form-check-input" type="checkbox" value="toys" id="toy">Toys</li>
-    <li><input class="form-check-input" type="checkbox" value="mobile" id="mob">Mobile</li>
-    <li><input class="form-check-input" type="checkbox" value="laptop" id="lap">Laptop</li>
-    <h5 class="text-white">Availability</h5>
+    <h5 class="text-black mt-2">filter by location</h5>
+    <li><input class="form-check-input ch" name="location" type="checkbox" value="india" id="ind" checked>India</li>
+    <li><input class="form-check-input ch" name="location" type="checkbox" value="australia" id="aus" checked>Australia
+    </li>
+    <li><input class="form-check-input ch" name="location" type="checkbox" value="canada" id="can" checked>Canada</li>
+    <h5 class="text-black mt-4">Availability</h5>
     <li><input class="form-check-input" type="radio" name="availability" id="rad1" value="in stock">In stock</li>
     <li><input class="form-check-input" type="radio" name="availability" id="rad2" value="out of stock">Out of stock
     </li>
-    
+
   </aside>
   <main>
     <div class="container">
@@ -60,23 +57,18 @@
           </div>
           <div class="modal-body">
             <form action="">
-
-              <!-- <div class="mb-3">
-                product name : <input type="text" id="prodName" >
-                <div><span id="spName"></span></div>
-              </div> -->
               <div class="mb-3">
-                product Title : <input type="text" id="prodTitle" >
+                product Title : <input type="text" id="prodTitle">
                 <div><span id="spTitle"></span></div>
               </div>
               <div class="mb-3">
-                Price : <input type="number" id="prodPrice" >
+                Price : <input type="number" id="prodPrice">
               </div>
               <div class="mb-3">
-                Rating: <input type="text" id="Rating" >
+                Rating: <input type="text" id="Rating">
               </div>
               <div class="mb-3">
-                image url : <input type="url" id="imgUrl" >
+                image url : <input type="url" id="imgUrl">
                 <div><span id="spImg"></span></div>
               </div>
               <div class="mb-3">
@@ -88,9 +80,9 @@
                 <div><span id="spDesc"></span></div>
               </div>
               <div class="mb-3">
-                <select class="form-select" aria-label="Default select example" style="width: 200px;" id="location">
-                  <option selected>location</option>
-                  <option value="india">india</option>
+                location:<select class="form-select" aria-label="Default select example" style="width: 200px;"
+                  id="location">
+                  <option value="india" selected>india</option>
                   <option value="australia">australia</option>
                   <option value="canada">canada</option>
                 </select>
@@ -106,7 +98,6 @@
               <div>
                 <span id="formValid"></span>
               </div>
-              
             </form>
           </div>
           <div class="modal-footer">
@@ -125,10 +116,6 @@
           </div>
           <div class="modal-body">
             <form action="">
-
-              <!-- <div class="mb-3">
-                product name : <input type="text" id="edProdName">
-              </div> -->
               <div class="mb-3">
                 Title : <input type="text" id="edProdTitle">
                 <div><span id="edTitle"></span></div>
@@ -182,7 +169,8 @@
 
   </main>
   <footer>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="float: right;"> Add Product
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+      style="float: right;"> Add Product
     </button>
   </footer>
   <!-- <script src="popup.js"></script> -->

@@ -9,56 +9,54 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
+  <script src="https://unpkg.com/js-image-zoom@0.7.0/js-image-zoom.js" type="application/javascript"></script>
   <title>Hello, world!</title>
 </head>
 
 <body>
   <a href="home.html"><button type="button" class="btn btn-primary">
-      < Back</button>
+      Back</button>
   </a>
   <!--Section: Block Content-->
-  <section class="mb-5">
+  <div class="d-inline-flex p-2 bd-highlight">
+    <section class="mb-5">
 
-    <div class="row">
-      <div class="col-md-6 mb-4 mb-md-0">
+      <div class="row">
+        <div class="col-md-6 mb-4 mb-md-0">
 
-        <div id="mdb-lightbox-ui"></div>
+          <div id="mdb-lightbox-ui"></div>
 
-        <div class="mdb-lightbox">
+          <div class="mdb-lightbox">
 
-          <div class="row product-gallery mx-1">
+            <div class="row product-gallery mx-1">
 
-            <div class="col-12 mb-0">
-              <figure class="view overlay rounded z-depth-1 main-img" id = "myImg">
-      
+              <div class="col-12 mb-0">
+                <figure class="view overlay rounded z-depth-1 main-img" id="myImg">
+
                   <!-- <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg" class="img-fluid z-depth-1"> -->
-              </figure>
+                </figure>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-6" id = "prodDetails">
-      <!-- <h5></h5>
-      <p class="mb-2 text-muted text-uppercase small">Shirts</p>
-      <p><span class="mr-1"><strong>$12.99</strong></span></p>
-      <p class="pt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit
-        error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio,
-        officia quis dolore quos sapiente tempore alias.</p> -->
+      <div class="col-md-6" id="prodDetails">
+        <hr>
+      </div>
 
-      <hr>
-    </div>
-    </div>
-
-  </section>
-  <!--Section: Block Content-->
-
+    </section>
+  </div>
+  <script>
+    var options = {
+      width: 400,
+      height: 250,
+      zoomWidth: 600,
+      offset: { vertical: 0, horizontal: 10 },
+      scale: 1.5
+    }
+    new ImageZoom(document.getElementById("myImg"), options);
+  </script>
   <script src="details.js"></script>
-
-  <!-- Optional JavaScript; choose one of the two! -->
-
-  <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
     crossorigin="anonymous"></script>

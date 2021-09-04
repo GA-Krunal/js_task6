@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
       delBtn.setAttribute("class", "btn btn-danger");
       delBtn.addEventListener("click", function () {
         let strg = JSON.parse(localStorage.getItem("products"));
-        strg.splice( strg.indexOf(strg[j]), 1);
+        strg.splice(strg.indexOf(strg[j]), 1);
         localStorage.setItem("products", JSON.stringify(strg));
         window.location.reload();
       })
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
       for (key in item) {
 
         switch (key) {
-          
+
           case "title":
             h5.innerText = item[key];
             break;
