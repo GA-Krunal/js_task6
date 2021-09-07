@@ -18,7 +18,7 @@
     <div class="container-fluid">
       <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item "><a href="home.html">level 1</a></li>
+          <li class="breadcrumb-item "><a href="index.html">level 1</a></li>
           <li class="breadcrumb-item active text-white" aria-current="page">level 2</li>
         </ol>
       </nav>
@@ -29,13 +29,12 @@
     </div>
   </nav>
   <aside class="sidebar">
-    <li> <a href="home.html"> <button type="button" class="btn btn-primary mt-2">Home</button></a></li>
+    <li> <a href="index.html"> <button type="button" class="btn btn-primary mt-2">Home</button></a></li>
     <li> <a href="trash.html"> <button type="button" class="btn btn-primary">Trash</button></a></li>
     <h5 class="text-black mt-2">filter by location</h5>
-    <li><input class="form-check-input ch" name="location" type="checkbox" value="india" id="ind" checked>India</li>
-    <li><input class="form-check-input ch" name="location" type="checkbox" value="australia" id="aus" checked>Australia
-    </li>
-    <li><input class="form-check-input ch" name="location" type="checkbox" value="canada" id="can" checked>Canada</li>
+    <li><input class="form-check-input ch" name="location" type="checkbox" value="india" id="in" checked>India</li>
+    <li><input class="form-check-input ch" name="location" type="checkbox" value="australia" id="au" checked>Australia</li>
+    <li><input class="form-check-input ch" name="location" type="checkbox" value="canada" id="ca"  checked>Canada</li>
     <h5 class="text-black mt-4">Availability</h5>
     <li><input class="form-check-input" type="radio" name="availability" id="rad1" value="in stock">In stock</li>
     <li><input class="form-check-input" type="radio" name="availability" id="rad2" value="out of stock">Out of stock
@@ -80,11 +79,9 @@
                 <div><span id="spDesc"></span></div>
               </div>
               <div class="mb-3">
-                location:<select class="form-select" aria-label="Default select example" style="width: 200px;"
-                  id="location">
-                  <option value="india" selected>india</option>
-                  <option value="australia">australia</option>
-                  <option value="canada">canada</option>
+                location:<input class="form-check-input " name="location" type="checkbox" value="india" id="ind" >India
+                <input class="form-check-input " name="location" type="checkbox" value="australia" id="aus">Australia
+                <input class="form-check-input " name="location" type="checkbox" value="canada" id="can">Canada
                 </select>
               </div>
               <div class="mb-3">
@@ -102,7 +99,7 @@
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary" onclick="getData()" id="s1">Submit</button>
-            <button type="button" class="btn btn-primary"> <a href="home.html" class="text-white"> cancel</a></button>
+            <button type="button" class="btn btn-primary"> <a href="index.html" class="text-white"> cancel</a></button>
           </div>
         </div>
       </div>
@@ -139,11 +136,9 @@
                 <div><span id="edDesc"></span></div>
               </div>
               <div class="mb-3">
-                <select class="form-select" aria-label="Default select example" style="width: 200px;" id="edLocation">
-                  <option selected>location</option>
-                  <option value="india">india</option>
-                  <option value="australia">australia</option>
-                  <option value="canada">canada</option>
+                location:<input class="form-check-input " name="location" type="checkbox" value="india" id="edInd">India
+                <input class="form-check-input " name="location" type="checkbox" value="australia" id="edAus">Australia
+                <input class="form-check-input " name="location" type="checkbox" value="canada" id="edCan">Canada
                 </select>
               </div>
               <div class="mb-3">
@@ -161,7 +156,7 @@
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary" onclick="updateData()" id="btnSave">Save</button>
-            <button type="button" class="btn btn-primary"> <a href="home.html" class="text-white"> cancel</a></button>
+            <button type="button" class="btn btn-primary"> <a href="index.html" class="text-white"> cancel</a></button>
           </div>
         </div>
       </div>
@@ -174,7 +169,7 @@
     </button>
   </footer>
   <!-- <script src="popup.js"></script> -->
-  <script src="home.js"></script>
+  <script src="index.js"></script>
 
   <!-- Optional JavaScript; choose one of the two! -->
 

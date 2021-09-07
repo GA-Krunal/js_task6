@@ -21,7 +21,21 @@ const getData = () => {
     availability = document.getElementById('rd2').value;
   }
   let description = document.getElementById("description").value;
-  let location = document.getElementById("location").value;
+  // let location = document.getElementById("location").value;
+  let locations = [];
+  let ch1 = document.getElementById("ind");
+  let ch2 = document.getElementById("aus");
+  let ch3 = document.getElementById("can");
+  if (ch1.checked === true) {
+    locations.push(ch1.value);
+  }
+  if (ch2.checked === true) {
+    locations.push(ch2.value);
+  }
+  if (ch3.checked === true) {
+    locations.push(ch3.value);
+  }
+  // console.log(locations);
   let category = document.getElementById("category").value;
 
   if (!ValidURL(imgUrl)) {
@@ -51,7 +65,7 @@ const getData = () => {
   obj.rating = prodRating;
   obj.stock = availability;
   obj.description = description;
-  obj.location = location;
+  obj.locations = locations;
   obj.category = category;
   obj.flag = "true";
 
@@ -80,7 +94,24 @@ const updateData = () => {
     availability = document.getElementById('edRd2').value;
   }
   let description = document.getElementById("edDescription").value;
-  let location = document.getElementById("edLocation").value;
+  let locations = [];
+  let ch1 = document.getElementById("edInd");
+  let ch2 = document.getElementById("edAus");
+  let ch3 = document.getElementById("edCan");
+  console.log(ch1.checked);
+  console.log(ch2.checked);
+  console.log(ch3.checked);
+  if (ch1.checked === true) {
+    locations.push(ch1.value);
+  }
+  if (ch2.checked === true) {
+    locations.push(ch2.value);
+  }
+  if (ch3.checked === true) {
+    locations.push(ch3.value);
+  }
+  // let location = document.getElementById("edLocation").value;
+  // let ch1 = document.getElementById("edInd")
   let category = document.getElementById("edCategory").value;
   let objIndex = localStorage.getItem("index");
 
@@ -111,7 +142,7 @@ const updateData = () => {
   obj.rating = prodRating;
   obj.stock = availability;
   obj.description = description;
-  obj.location = location;
+  obj.locations = locations;
   obj.category = category;
   obj.flag = "true";
 
@@ -206,9 +237,36 @@ document.addEventListener("DOMContentLoaded", function () {
           document.getElementById("edRd2").checked = "checked";
         }
         document.getElementById("edDescription").value = item["description"];
-        document.getElementById("edLocation").value = item["location"];
+        // document.getElementById("edLocation").value = item["location"];
+        // document.getElementById("edInd")
+        // console.log(item["locations"])
+        if (item["locations"].includes("india")) {
+          document.getElementById("edInd").checked = true;
+          document.getElementById("edInd").value = "india";
+          // console.log("ind");
+        }
+        else{
+          document.getElementById("edInd").checked = false;
+        }
+        if (item["locations"].includes("australia")) {
+          document.getElementById("edAus").checked = true;
+          document.getElementById("edAus").value = "australia";
+          // console.log("australia");
+        }
+        else{
+          document.getElementById("edAus").checked = false;
+        }
+        if (item["locations"].includes("canada")) {
+          document.getElementById("edCan").checked = true;
+          document.getElementById("edCan").value = "canada";
+          // console.log("canada");
+        }
+        else{
+          document.getElementById("edCan").checked = false;
+        }
         document.getElementById("edCategory").value = item["category"];
         localStorage.setItem("index", strg.indexOf(strg[j]))
+        // window.location.reload();
       })
       for (key in item) {
 
@@ -280,6 +338,55 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   })
-})
 
+
+  // let arr = Array.from(document.getElementsByClassName("ch"));
+  // // console.log(arr);
+  // var loc = [];
+  // // console.log(prodArray);
+  // for (let k = 0; k < arr.length; k++) {
+  //   const element = arr[k];
+   
+  //   element.addEventListener("click",function(){
+  //     if (element.checked) {
+  //       if (loc.indexOf(element.value)> -1) {
+  //         loc.splice(loc.indexOf(element.value), 1);
+  //      }
+  //     }
+  //     else{
+  //      loc.push(element.value);
+  //     }
+  //     console.log(loc);
+  //     for (let i = 0; i < prodArray.length; i++) {
+  //       // const element = proArray[i];
+  //       // console.log(prodArray[i]["locations"]);
+  //       let myArr = prodArray[i]["locations"];
+
+  //       if (loc.some( ai => myArr.includes(ai) )) {
+  //         console.log(prodArray[i]["title"]);
+  //         let Cards = Array.from(document.getElementsByClassName("card-title"));
+  //         Cards.forEach(element => {
+  //           // console.log(element.innerText);
+  //           // console.log(element.textContent);
+  //           if (element.textContent === prodArray[i]["title"]) {
+  //             element.parentNode.parentNode.style.display = "none";
+  //           }
+  //           else{
+  //             element.parentNode.parentNode.style.display = "";
+  //           }
+  //         });
+  //       }
+  //       else{
+          
+  //         // console.log("hello");
+  //       }
+  //     }
+  //     // *****************
+  //     // console.log(item);
+      
+  //   })
+  // }
+
+
+})
 
